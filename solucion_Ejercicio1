@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class Superficie {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        
+        System.out.println("Ingrese la longitud de la habitación: ");
+        int longitud = sc.nextInt();
+
+      
+        System.out.println("Ingrese la anchura de la habitación: ");
+        int anchura = sc.nextInt();
+
+        int superficie = longitud * anchura;
+
+        System.out.println("La superficie de la habitación es de :" + superficie + " metros cuadrados.");
+    }
+}
