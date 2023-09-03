@@ -1,0 +1,56 @@
+import java.util.Scanner;
+
+public class InformeVentas {
+
+    public static void main(String[] args) {
+
+        // Declarar los arreglos
+        int[] codigos = new int[100];
+        int[] valor = new int[100];
+        int[] cantidad = new int[100];
+
+        Scanner sc = new Scanner(System.in);
+        for (int i = 0; i < codigos.length; i++) {
+            codigos[i] = sc.nextInt();
+            valor[i] = sc.nextInt();
+            cantidad[i] = sc.nextInt();
+        }
+
+        int totalProductosVendidos = 0;
+        for (int i = 0; i < codigos.length; i++) {
+            if (cantidad[i] > 0) {
+                totalProductosVendidos++;
+            }
+        }
+
+        int totalIngresos = 0;
+        for (int i = 0; i < codigos.length; i++) {
+            if (cantidad[i] > 0) {
+                totalIngresos += valor[i] * cantidad[i];
+            }
+        }
+
+        int productoMasVendido = codigos[0];
+        int cantidadMasVendida = 0;
+        for (int i = 1; i < codigos.length; i++) {
+            if (cantidades[i] > cantidadMasVendida) {
+                productoMasVendido = codigos[i];
+                cantidadMasVendida = cantidad[i];
+            }
+        }
+
+        int productoMasCostoso = codigos[0];
+        int valorMasCostoso = valores[0];
+        for (int i = 1; i < codigos.length; i++) {
+            if (valores[i] > valorMasCostoso) {
+                productoMasCostoso = codigos[i];
+                valorMasCostoso = valor[i];
+            }
+        }
+
+        System.out.println("Total productos vendidos: " + totalProductosVendidos);
+        System.out.println("Total ingresos por ventas: " + totalIngresos);
+        System.out.println("Producto más vendido: " + productoMasVendido);
+        System.out.println("Producto más costoso: " + productoMasCostoso);
+    }
+}
