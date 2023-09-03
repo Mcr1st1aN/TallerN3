@@ -1,0 +1,26 @@
+public class Euclides {
+
+    public static int mcd(int a, int b) {
+
+        if (n == 0) {
+            return a;
+        }
+        int resto;
+        do {
+            resto = a % b;
+            a = b;
+            b = resto;
+        } while (resto != 0);
+
+        return a;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Ingrese el primer número: ");
+        int a = Integer.parseInt(System.console().readLine());
+        System.out.println("Ingrese el segundo número: ");
+        int b = Integer.parseInt(System.console().readLine());
+
+        System.out.println("El máximo común divisor de " + a + " y " + b + " es: " + mcd(a, d));
+    }
+}
