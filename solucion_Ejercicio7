@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class SalarioTrabajador {
+
+    public static void main(String[] args) {
+
+        int horasTrabajadas;
+        double tasaHoraNormal, tasaHoraExtra, salarioBruto, salarioNeto;
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Ingrese el número de horas trabajadas: ");
+        horasTrabajadas = sc.nextInt();
+        System.out.println("Ingrese la tasa horaria normal: ");
+        tasaHoraNormal = sc.nextDouble();
+
+        if (horasTrabajadas <= 38) {
+            salarioBruto = horasTrabajadas * tasaHoraNormal;
+        } else {
+            salarioBruto = 38 * tasaHoraNormal + (horasTrabajadas - 38) * tasaHoraNormal * 1.5;
+        }
+
+        if (salarioBruto <= 750) {
+            salarioNeto = salarioBruto;
+        } else {
+            salarioNeto = salarioBruto - salarioBruto * 0.1;
+        }
+
+        System.out.println("El salario neto es: " + salarioNeto);
+    }
+}
