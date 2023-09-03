@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class HorasAmPm {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+      
+        System.out.println("Ingrese la hora en notación de 24 horas: ");
+        String hora24 = sc.nextLine();
+
+      
+        if (hora24.length() != 5) {
+            System.out.println("La hora debe tener exactamente 5 caracteres.");
+            System.exit(1);
+        }
+
+        
+        int horas = Integer.parseInt(hora24.substring(0, 2));
+        int minutos = Integer.parseInt(hora24.substring(3));
+
+        String ampm = "AM";
+        if (horas >= 12) {
+            horas -= 12;
+            ampm = "PM";
+        }
+        System.out.println("La hora en notación de 12 horas es: " + horas + ":" + minutos + " " + ampm);
+    }
+}
