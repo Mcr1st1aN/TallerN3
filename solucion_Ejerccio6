@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class Triangulo{
+
+    public static void main(String[] args) {
+
+        int cateto1, cateto2;
+        double hipotenusa;
+        double angulo1, angulo2;
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Ingrese la longitud del cateto 1: ");
+        cateto1 = sc.nextInt();
+        System.out.println("Ingrese la longitud del cateto 2: ");
+        cateto2 = sc.nextInt();
+
+        hipotenusa = Math.sqrt(cateto1 * cateto1 + cateto2 * cateto2);
+
+        angulo1 = Math.acos((cateto1 / hipotenusa));
+        angulo2 = Math.acos((cateto2 / hipotenusa));
+
+        System.out.println("La hipotenusa es: " + hipotenusa);
+        System.out.println("El ángulo agudo 1 es: " + angulo1);
+        System.out.println("El ángulo agudo 2 es: " + angulo2);
+    }
+}
